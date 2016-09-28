@@ -1,0 +1,106 @@
+
+<HTML>
+<head >
+<meta http-equiv = "content-type" content = "text/html;charset=gb2312">
+<title>中塑仓单实时行情</title>
+<meta http-equiv = "content-type" content = "text/html;charset=gb2312">
+
+<SCRIPT LANGUAGE="JScript">
+<!--
+ var maxWidth=500, maxHeight=300;
+ var isNS= ( document.all )?false:true;
+
+ function OnInit()
+ {
+ 		hids.style.visibility = "hidden";
+		tab1.style.visibility = "visible";
+		top.ActiveType=3;
+		tab1.style.width =Math.max(maxWidth,document.body.clientWidth)-1;
+		tab1.style.height =Math.max(maxHeight,document.body.clientHeight)-1;    
+		HQApplet.style.width = Math.max(maxWidth,document.body.clientWidth)-4;
+		HQApplet.style.height =Math.max(maxHeight,document.body.clientHeight)-8;    
+		if(isNS)
+		{
+			HQApplet.SizeToFenShi(Math.max(maxWidth,document.body.clientWidth)-1,
+				 Math.max(maxHeight,document.body.clientHeight)-1);
+		}
+		window.onresize=onActivexSize;
+		HQApplet.focus();
+ }
+
+ function onActivexSize()
+ {
+   		tab1.style.width = Math.max(maxWidth,document.body.clientWidth)-1;
+		tab1.style.height = Math.max(maxHeight,document.body.clientHeight)-1;
+		HQApplet.style.width = Math.max(maxWidth,document.body.clientWidth)-4;
+		HQApplet.style.height =Math.max(maxHeight,document.body.clientHeight)-8;
+		if(isNS)
+		{
+			HQApplet.SizeToFenShi(Math.max(maxWidth,document.body.clientWidth)-1,
+				 Math.max(maxHeight,document.body.clientHeight)-1);
+			var tmpWidth = Math.max(maxWidth,window.innerWidth-1);
+			var tmpHeight = Math.max(maxHeight,window.innerHeight-1);
+			document.layers[0].document.applets.Applet1.setSize(window.innerWidth,window.innerHeight);
+		}
+		HQApplet.focus();
+
+ }
+  
+ function OnActivexFocus()
+ {
+        HQApplet.focus();
+ }
+//-->
+</SCRIPT>
+
+</head>
+
+<BODY BGCOLOR = black onload="OnInit();" onResize="onActivexSize();" onfocus="OnActivexFocus();" TOPMARGIN=0 LEFTMARGIN=0>
+<TABLE ID=tab1  BORDER=0 style="position:absolute;top=0px;left=0px;visibility: hidden" >
+ <TR>
+  <TD>
+
+<applet
+  codebase = "."
+  archive  = "HQApplet.jar"
+  code     = gnnt.MEBS.HQApplet.HQApplet.class
+  name     = "HQApplet"
+>
+<PARAM NAME="Port" value="8002">
+<PARAM NAME="ColorStyle" value="0">
+<PARAM NAME="ShowBuySell" value="1"> 
+<PARAM NAME="MultiQuoteItems" value="No;Code;ReverseCount;YesterBalance;OpenPrice;HighPrice;LowPrice;Balance;CurPrice;BuyPrice;BuyAmount;SellPrice;SellAmount;TotalAmount;UpValue;UpRate;CurAmount"> 
+<!-- No;Name;Code;CurPrice;CurAmount;SellPrice;SellAmount;BuyPrice;BuyAmount;TotalAmount;UpValue;UpRate;ReverseCount;Balance;OpenPrice;HighPrice;LowPrice;YesterBalance;TotalMoney;AmountRate;ConsignRate;Unit-->
+<PARAM NAME="MultiQuoteStaticIndex" value="1"> 
+<PARAM NAME="MultiQuoteName" value="Name:品名 ;Code:商品代码;OpenPrice:今开市;YesterBalance:昨结算;Balance:结算价;"> 
+
+</applet>
+
+  </TD>
+ </TR>
+</TABLE>
+</TR>
+</TABLE>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" id="hids">
+  <tr align="middle" valign="center"> 
+    <td>
+      <table border="0" cellspacing="8" cellpadding="0" align="center">
+        <tr> 
+          <td> 
+            <div align="center">&nbsp;</div>
+          </td>
+        </tr>
+        
+        <tr> 
+          <td> 
+            <div align="center" class="qidong"><font color="#ffcc00">实时行情程序正在启动中，请稍候……</font></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</BODY>
+</HTML>
+
+
